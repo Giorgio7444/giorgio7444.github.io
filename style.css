@@ -3,7 +3,7 @@
   --secondary-color: #f2f2ee;
   --tertiary-color: #fac800;
   --font-family: 'inter', sans-serif;
-  --font-big:8vw;
+  --font-big: 12.5vw;
 }
 
 body {
@@ -25,25 +25,24 @@ body {
   position:fixed;
   justify-content: center;
   left: 40vw;
-  height: 70v;
+  height: 70vw;
   color: var(--secondary-color);
 }
 
 .accordion {
   .item {
     line-height: 6em;
-    border-bottom-width: 1vw;
+    border-bottom-width: 1.6vw;
     border-bottom-color: var(--secondary-color);
 
     button {
       font-size: var(--font-big);
       font-weight: 900;
-      line-height: 2.5vw;
-      padding-top: 2.4vw;
-      padding-bottom: 1vw;
-      padding-left: 30px;
+      line-height: 8vw;
+      padding-top: 3.3vw;
+      padding-bottom: 1vw
     }
-    
+
     .content {
       white-space: pre-line;
       margin-bottom: 0.5em;
@@ -72,7 +71,7 @@ body {
   display: block;
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 1vw;
   z-index: 1000;
   font-size: 12vh;
   font-weight: 700;
@@ -80,8 +79,7 @@ body {
 
 #menu-opener {
   padding-bottom: 0.16em;
-  font-weight: 700;
-  padding-right: 30px;
+  justify-content: center;
 }
 
 .swiper {
@@ -129,9 +127,7 @@ color: var(--tertiary-color);
 .contacts {
   white-space: pre-line;
   margin-bottom: 0.5em;
-  margin-right: 2vw;
   font-weight: 700;
-  margin-left: 2vw;
   font-size: 1.8vw;
   line-height: 1.2em;
 }

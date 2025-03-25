@@ -1,6 +1,6 @@
 const setupTitle = () => {
   const letter = document.querySelector("#site-title .letter");
-  const letters = ["a", "e", "i", "o", "u"];
+  const letters = ["benvenuta nel", "benvenute nel", "benvenuti nel", "benvenuto nel", "benvenutu nel"];
   let counter = 0;
   setInterval(() => {
     letter.textContent = letters[counter];
@@ -36,7 +36,7 @@ const setupAccordion = () => {
 
       setTimeout(() => {
         const elementTop = button.getBoundingClientRect().top + window.scrollY;
-        const extraOffset = window.innerWidth * 0.01;
+        const extraOffset = window.innerWidth * 0.016;
         window.scrollTo({
           top: elementTop - extraOffset,
           behavior: "smooth",
