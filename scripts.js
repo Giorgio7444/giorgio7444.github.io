@@ -7,7 +7,7 @@ const setupTitle = () => {
     counter++;
 
     if (counter >= letters.length) counter = 0;
-  }, 700);
+  }, 500);
 };
 
 let buttons = [];
