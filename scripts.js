@@ -7,7 +7,7 @@ const setupTitle = () => {
     counter++;
 
     if (counter >= letters.length) counter = 0;
-  }, 500);
+  }, 600);
 };
 
 let buttons = [];
@@ -36,7 +36,7 @@ const setupAccordion = () => {
 
       setTimeout(() => {
         const elementTop = button.getBoundingClientRect().top + window.scrollY;
-        const extraOffset = window.innerWidth * 0.016;
+        const extraOffset = window.innerWidth * 0.005;
         window.scrollTo({
           top: elementTop - extraOffset,
           behavior: "smooth",
@@ -49,11 +49,12 @@ const setupAccordion = () => {
 const setupMenu = () => {
   const menuToggle = document.querySelector("#menu-toggle");
   const menuItems = document.querySelectorAll("#menu .item");
+  const changeText = document.querySelector("#menu-toggle");
   gsap.set(menuToggle, { y: window.innerHeight - 200 });
   const speed = 0.5;
   const tl = gsap.timeline({ paused: true });
   tl.to("#site-title", speed, { y: "-=200%", ease: "power1.inOut" });
-  tl.to("#menu-toggle", speed, { y: "-7vh", rotation: 45 }, `-=${speed / 3}`);
+  tl.to("#menu-toggle", speed, { y: "-7vh", ease: "power1.inOut"}, `-=${speed / 3}`);
   tl.to(
     menuItems,
     {
@@ -75,6 +76,17 @@ const setupMenu = () => {
     menuToggle.classList.toggle("active");
     overflowHidden();
   });
+
+  changeText.addEventListener("click", () => {
+    setTimeout(() => {
+      if (menuToggle.classList.contains("active")) {
+        changeText.textContent = "LET'S GO BACK!";
+      } else {
+        changeText.textContent = "LET'S GO!";
+      }
+    }, 600);
+  });
+
 };
 
 const menuToggle = document.querySelector("#menu-toggle");
@@ -86,6 +98,14 @@ const overflowHidden = () => {
     document.body.style.overflowY = "hidden";
   }
 };
+
+menuToggle.addEventListener("mouseenter", () => {
+  menuToggle.classList.add("highlight");
+});
+
+menuToggle.addEventListener("mouseleave", () => {
+  menuToggle.classList.remove("highlight"); // Torna al colore originale quando il mouse esce
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded");
