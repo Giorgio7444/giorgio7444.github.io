@@ -53,7 +53,6 @@ const setupMenu = () => {
   const speed = 0.5;
   const tl = gsap.timeline({ paused: true });
   tl.to("#site-title", speed, { y: "-=200%", ease: "power1.inOut" });
-  tl.to("#logo-screen", speed, { x: "100%", ease: "power1.inOut" }, `-=${speed}`);
   tl.to("#menu-toggle", speed, { y: "-7vh", rotation: 45 }, `-=${speed / 3}`);
   tl.to(
     menuItems,

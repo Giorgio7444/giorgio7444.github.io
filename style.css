@@ -14,25 +14,26 @@ body {
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
+  background-image: url('assets/About/bg.jpg');
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh; /* Assicura che il body prenda l'intera altezza della viewport */
+  margin: 0;
 }
 
 #site-title {
-  font-size: 6vw;
-  line-height: 0.9em;
-}
-
-#logo-screen {
-  position:fixed;
-  justify-content: center;
-  left: 40vw;
-  height: 70vw;
-  color: var(--secondary-color);
+  font-size: 11vw;
+  line-height: 9vw;
+  position: fixed;
+  top: 5%;
 }
 
 .accordion {
   .item {
     line-height: 6em;
-    border-bottom-width: 1.6vw;
+    border-bottom-width: 0.5vw;
     border-bottom-color: var(--secondary-color);
 
     button {
@@ -45,11 +46,11 @@ body {
 
     .content {
       white-space: pre-line;
+      font-weight: 500;
       margin-bottom: 0.5em;
-      margin-right: 2vw;
-      font-weight: 700;
-      margin-left: 2vw;
-      font-size: 2.8vw;
+      margin-right: 7vw;
+      margin-left: 7vw;
+      font-size: 2vw;
       line-height: 1.2em;
     }
     &.active {
@@ -71,10 +72,9 @@ body {
   display: block;
   position: absolute;
   top: 30px;
-  left: 1vw;
   z-index: 1000;
-  font-size: 12vh;
-  font-weight: 700;
+  font-size: 6rem;
+  font-weight: bold;
 }
 
 #menu-opener {
