@@ -58,8 +58,8 @@ const setupMenu = () => {
   tl.to(
     menuItems,
     {
-      y: "-87vh",
-      stagger: 0.06,
+      y: "-80vh",
+      stagger: 0.1,
     },
     `-=${speed / 2}`
   );
@@ -80,11 +80,11 @@ const setupMenu = () => {
   changeText.addEventListener("click", () => {
     setTimeout(() => {
       if (menuToggle.classList.contains("active")) {
-        changeText.textContent = "LET'S GO BACK!";
+        changeText.textContent = "GO BACK!";
       } else {
         changeText.textContent = "LET'S GO!";
       }
-    }, 600);
+    }, 800);
   });
 
 };
