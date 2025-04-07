@@ -1,7 +1,7 @@
 :root {
   --primary-color: #f3f3f3;
   --secondary-color: #02021c;
-  --tertiary-color: #f00707; 
+  --tertiary-color: #f08b07; 
   --quadrary-color: #505050;
   --font-family: 'itc-avant-garde-gothic-pro';
   --font-big: 12.5vw;
@@ -55,7 +55,7 @@ body {
       margin-bottom: 0.5em;
       margin-left: 4vw;
       margin-right: 25vw;
-      font-size: 3.9vw;
+      font-size: 3.8vw;
       line-height: 4.5vw;
     }
     &.active {
