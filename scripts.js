@@ -16,7 +16,7 @@ let currentButton = null;
 const setupAccordion = () => {
   const accordion = document.querySelector(".accordion");
   const buttons = accordion.querySelectorAll("button");
-  const contents = accordion.querySelectorAll(".content");
+  const contents = accordion.querySelectorAll(".content, .contentps");
   let currentButton = null;
 
   buttons.forEach((button) => {
@@ -30,7 +30,7 @@ const setupAccordion = () => {
       }
 
       button.parentElement.classList.add("active");
-      const content = button.parentElement.querySelector(".content");
+      const content = button.parentElement.querySelector(".content, .contentps");
       content.style.maxHeight = content.scrollHeight + "px";
       currentButton = button;
 

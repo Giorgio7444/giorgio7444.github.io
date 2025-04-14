@@ -24,6 +24,48 @@ body {
   margin: 0;
 }
 
+body.loading {
+  overflow: hidden;
+}
+
+/* Preloader copre tutto */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(244, 244, 244); /* Cambia colore se vuoi */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Loader: cerchio che gira */
+.loader {
+  width: 100px;
+  height: auto;
+  padding: 10px;
+  border-radius: 50%;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Classe per farlo scomparire */
+#preloader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
 #site-title {
   color: var(--secondary-color);
   font-size: 11.5vw;
@@ -47,6 +89,23 @@ body {
       padding-bottom: 1vw
     }
 
+    .contentps {
+      color: var(--quadrary-color);
+      white-space: pre-line;
+      font-weight: 700;
+      font-kerning: auto; 
+      margin-bottom: 0.5em;
+      margin-left: 4vw;
+      margin-right: 4vw;
+      font-size: 3.8vw;
+      line-height: 4.5vw;
+    }
+    &.active {
+      .icon {
+        transform: rotate(45deg);
+      }
+    }
+
     .content {
       color: var(--quadrary-color);
       white-space: pre-line;
@@ -54,8 +113,8 @@ body {
       font-kerning: auto; 
       margin-bottom: 0.5em;
       margin-left: 4vw;
-      margin-right: 25vw;
-      font-size: 3.8vw;
+      margin-right: 20vw;
+      font-size: 3.7vw;
       line-height: 4.5vw;
     }
     &.active {
@@ -65,6 +124,7 @@ body {
     }
   }
 }
+
 
 #menu {
   position: absolute;
