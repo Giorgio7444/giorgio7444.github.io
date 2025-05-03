@@ -112,19 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTitle();
   setupAccordion();
   setupMenu();
-  
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-    },
-})
 
 });
+
+  const itemHover = document.getElementById("item-hover");
+
+  itemHover.addEventListener("mouseenter", () => {
+    itemHover.classList.add("highlight");
+  });
+
+  itemHover.addEventListener("mouseleave", () => {
+    itemHover.classList.remove("highlight");
+  });

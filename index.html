@@ -9,6 +9,7 @@
   <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" >
   <link href="style.css" rel="stylesheet">
   <link rel="icon" type="icon" href="assets/logon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -77,29 +78,30 @@
 
   <div id="preloader">
     <div class="loader">
-      <img src="assets/logon.png" alt="logo">
+      <img src="assets/logob.png" alt="logo">
     </div>
   </div>
   
-  <div class="w-full flex ml-7">
+  <div class="w-full flex ml-4">
     <a id="menu-toggle" href="#">LET'S GO!</a>
   </div>
 
-  <div class="ml-7 mt-5 mr-0">
+  <div class="ml-2 mr-0">
     <div id="site-title" class="uppercase">
       <span class="letter">Benvenuta nel</span> <br>
       portfolio di<br>
       <span class="highlight" class="word">veeswal</span>
     </div>
-  </div>
+
+</div>
 
   <div id="menu" class="accordion">
       <div class="item">
-        <button id="menu-opener" class="w-full flex justify-center items-center ml-7 text-slate-800">
-          <div>ABOUT</div>
+        <button id="menu-opener" class="accordion-element w-full flex justify-center items-center ml-4 text-slate-800">
+          <div id="item-hover">ABOUT</div>
         </button>
         
-        <div class="content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8">
+        <div class="content content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8 ml-16 mr-28">
           
           <br>Mi chiamo Giorgio, ho 22 anni e sono un <span class="highlight">graphic designer</span>.
           <br>Nel 2024 ho conseguito una laurea in grafica all’Accademia di Belle Arti di Lecce e al momento frequento il corso di Digital Design and Communication presso la LABA di Brescia.
@@ -113,16 +115,16 @@
       </div>
 
       <div class="item">
-        <button id="menu-opener" class="w-full flex justify-center items-center ml-7 text-slate-800">
-          <div>VEESWAL</div>
+        <button id="menu-opener" class="w-full flex justify-center items-center ml-4 text-slate-800">
+          <div id="item-hover">VEESWAL</div>
         </button>
-        <div class="content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8">
+        <div class="content content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8 ml-16 mr-28">
           <br>È la pagina Instagram su cui sovente pubblico i miei progetti. 
           <br>Il logo di Veeswal è un <span class="highlight">sunto perfetto del mio stile</span> e del mio modo di fare grafica. Nasce da una sintesi estrema della prima parte del meccanismo ottico, costituito da pupilla (<span class="highlight">•</span>), iride (<span class="highlight">}</span>) e cristallino (<span class="highlight"><</span>). 
           <br>In fase di progettazione li ho stilizzati molto e il risultato finale è stato questo <span class="highlight">simpatico angioletto</span>. <br>
 
 
-          <div class="grid grid-cols-1 gap-2 p-2">
+          <div class="justify-center">
             <div><img src="assets/Veeswal/bigliettino.jpg" alt="bigliettino" class="w-full h-auto shadow-md"></div>
             <div><img src="assets/Veeswal/billboard.jpg" alt="billboard" class="w-full h-auto shadow-md"></div>
             <div><img src="assets/Veeswal/cartellone.jpg" alt="cartellone" class="w-full h-auto shadow-md"></div>
@@ -135,15 +137,15 @@
       </div>
       
       <div class="item">
-        <button id="menu-opener" class="w-full flex justify-center items-center ml-7 text-slate-800">
-          <div>OLIVETTI RED</div>
+        <button id="menu-opener" class="w-full flex justify-center items-center ml-4 text-slate-800">
+          <div id="item-hover">OLIVETTI RED</div>
         </button>
-        <div class="content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8">
+        <div class="content content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8 ml-16 mr-28">
           <br>Questa è stata la mia tesi pratica per il conseguimento della mia <span class="highlight">laurea triennale</span> nell’Ottobre del 2024. 
           <br>Ho realizzato un redesign del logo di Olivetti aggiungendovi anche una breve parte di corporate identity. Mi sono basato sul concetto di infinito introdotto da Marcello Nizzoli nel 1952, partendo da lì ho realizzato un <span class="highlight">logotipo minimal</span> ma contemporaneo. 
           <br>Il concetto di Nizzoli è stato reimpiegato nel logo (che si trova all’interno del logotipo) in cui il <span class="highlight">pi greco</span> diventa la doppia T di Olivetti.<br>
           
-          <div class="grid grid-cols-1 gap-2 p-2">
+          <div class="justify-center">
           <div><img src="assets/Olivetti/sp-min.jpg" alt="sp-min" class="w-full h-auto shadow-md"></div>
           <div><img src="assets/Olivetti/busta.jpg" alt="busta" class="w-full h-auto shadow-md"></div>
           <div><img src="assets/Olivetti/mock1.jpg" alt="mockup" class="w-full h-auto shadow-md"></div>
@@ -156,16 +158,15 @@
       </div>
 
       <div class="item">
-        <button id="menu-opener" class="w-full flex justify-center items-center ml-7 text-slate-800">
-          <div>STILL LIE</div>
+        <button id="menu-opener" class="w-full flex justify-center items-center ml-4 text-slate-800">
+          <div id="item-hover">STILL LIE</div>
         </button>
-        <div class="content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8">
+        <div class="content content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8 ml-16 mr-28">
           "<span class="highlight">L’arte deve essere al di là della rappresentazione tridimenzionale, questa è un’illusione, una bugia</span>".
           <br>Questo era l’incipit del mio progetto per l’esame di fotografia. Una frase di <span class="highlight">Mondrian</span> che mi ha guidato nella realizzazione di 20 foto ispirate ai miei quadri di nature morte preferiti. 
           <br>Questo esercizio di stile mi ha iniziato alla fotografia, campo che studio e pratico molto volentieri.<br>
           
-          <div class="grid grid-cols-1 gap-2 p-2">
-            <div><img src="assets/Still Lie/cover.pdf" alt="cover" class="w-full h-auto shadow-md"></div>
+          <div class="justify-center">
             <div><img src="assets/Still Lie/pack-min.jpg" alt="packaging" class="w-full h-auto shadow-md"></div>
             <div><img src="assets/Still Lie/Still Lie(f) - Giorgio Morandi-min.jpg" alt="morandi" class="w-full h-auto shadow-md"></div>
             <div><img src="assets/Still Lie/Still Lie(f) - Henri Matisse-min.jpg" alt="matisse" class="w-full h-auto shadow-md"></div>
@@ -177,15 +178,15 @@
       </div>
 
       <div class="item">
-        <button id="menu-opener" class="w-full flex justify-center items-center ml-7 text-slate-800">
-          <div>BRUTALIST PASTA</div>
+        <button id="menu-opener" class="w-full flex justify-center items-center ml-4 text-slate-800">
+          <div id="item-hover">BRUTALIST PASTA</div>
         </button>
-        <div class="content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8">
+        <div class="content content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8 ml-16 mr-28">
           “<span class="highlight">Che non ti trovo mai, tipo il tempo di cottura della pasta</span>” diceva Dani Faiv nella canzone Legame. Questa frase mi ha ispirato alla realizzazione e concretizzazione del progetto. 
           <br>Brutalist Pasta è un <span class="highlight">concept ironico</span> che nasce dall’esigenza di avere una confezione di pasta facile da aprire con il tempo di cottura in bella vista, senza altri inutili abbellimenti.
           <br>Sulla scatola di spaghetti ci sono tutte le informazioni necessarie, ovvero il tipo di pasta, il peso, i tempi di cottura e la più importante: <span class="highlight" class="uppercase">don’t break in half</span>.<br>
           
-          <div class="grid grid-cols-1 gap-2 p-2">
+          <div class="justify-center">
             <div><img src="assets/Brutalist Pasta/1.jpg" alt="packaging" class="w-full h-auto shadow-md"></div>
             <div><img src="assets/Brutalist Pasta/2.jpg" alt="packaging" class="w-full h-auto shadow-md"></div>
             <div><img src="assets/Brutalist Pasta/3.jpg" alt="packaging" class="w-full h-auto shadow-md"></div>
@@ -196,46 +197,48 @@
       </div>
 
       <div class="item">
-        <button id="menu-opener" class="w-full flex justify-center items-center ml-7 text-slate-800">
-          <div>POSTERS</div>
+        <button id="menu-opener" class="w-full flex justify-center items-center ml-4 text-slate-800">
+          <div id="item-hover">POSTERS</div>
         </button>
-        <div class="contentps text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out mb-8">
-          
-        <div class="grid grid-cols-3 gap-1 p-2">
-          <div><img src="assets/Poster/1.jpg" alt="poster" class="w-auto h-auto shadow-md"></div>
-          <div><img src="assets/Poster/2.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/3.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/4.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/5.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/6.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/7.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/8.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/9.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/10.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/11.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/12.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/13.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/14.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/15.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/16.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/17.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/18.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/19.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/20.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/21.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/22.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/23.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/24.jpg" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/25.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-          <div><img src="assets/Poster/26.pdf" alt="poster" class="w-auto h-flex shadow-md"></div>
-        </div>
-      </div>
+      
+        <div class="content text-2xl max-h-0 overflow-hidden transition-all duration-300 ease-in-out ml-4 mr-4">
+  <div class="grid">
+    <div class="grid-sizer"></div>
+
+      <div class="grid-item grid-item--66wide"><img src="assets/Poster/25-min.jpg" alt="Token Appreciation Society Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/5-min.jpg" alt="Olivetti Red Face Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/24-min.jpg" alt="Spaghetti Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/13-min.jpg" alt="Che Guevara Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/1-min.jpg" alt="Coca Cola Poster"></div>
+      <div class="grid-item grid-item--66wide"><img src="assets/Poster/26-min.jpg" alt="El Lissisky Style Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/10-min.jpg" alt="Futtite a Mare Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/17-min.jpg" alt="White Fly Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/9-min.jpg" alt="Olivetti di Ivrea Tools Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/23-min.jpg" alt="Santa Sangre Poster"></div>
+      <div class="grid-item grid-item--66wide"><img src="assets/Poster/27-min.jpg" alt="Another World War poster"></div>
+      <div class="grid-item"><img src="assets/Poster/22-min.jpg" alt="Victims Of The Dance Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/6-min.jpg" alt="Bodoni Atlantis Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/21-min.jpg" alt="Resilience Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/16-min.jpg" alt="Wanna Marchi Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/3-min.jpg" alt="Newspaper Girl Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/12-min.jpg" alt="Marinetti Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/8-min.jpg" alt="Munari Fork Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/19-min.jpg" alt="La propietà non è più furto Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/4-min.jpg" alt="Skull Poster"></div>
+      <div class="grid-item grid-item--66wide"><img src="assets/Poster/29-min.jpg" alt="We Are Getting Fucking Fucked Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/15-min.jpg" alt="Iron Yacht Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/2-min.jpg" alt="America China Sticks Poster"></div>
+      <div class="grid-item"><img src="assets/Poster/14-min.jpg" alt="Water Bottle Poster"></div>
     </div>
+  </div>
+
+      </div>
+      
 
       <div class="item">
         <a href="https://bento.me/veeswal" target="_blank" class="w-full">
-          <button id="menu-opener" class="gotocontacts w-full flex justify-center items-center ml-7 text-slate-800">
-            <div>CONTACT ME</div>
+          <button id="menu-opener" class="gotocontacts w-full flex justify-center items-center ml-4 text-slate-800 ml-4 mr-15">
+            <div id="item-hover">CONTACT ME</div>
           </button>
         </a>
       </div>
@@ -247,6 +250,20 @@
   <script src="scripts.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1CNL89KW0"></script>
 
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  
+  <script>
+    const grid = document.querySelector('.grid');
+    imagesLoaded(grid, () => {
+      new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+      });
+    });
+  </script>
+  
   <script>
   // Aggiungi classe "loading" al body all'inizio
   document.body.classList.add('loading');
@@ -267,3 +284,4 @@
 
 </body>
 </html>
+

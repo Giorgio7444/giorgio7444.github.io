@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #f3f3f3;
-  --secondary-color: #02021c;
-  --tertiary-color: #f08b07; 
-  --quadrary-color: #505050;
+  --primary-color: #02021c;
+  --secondary-color: #f3f3f3;
+  --tertiary-color: #f0bd07; 
+  --quadrary-color: #b5b5b5;
   --font-family: 'itc-avant-garde-gothic-pro';
   --font-big: 12.5vw;
 }
@@ -15,17 +15,13 @@ body {
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
-  background-image: url(assets/About/bg-white.jpg);
+  background-image: url(assets/about/bg.jpg);
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
   margin: 0;
-}
-
-body.loading {
-  overflow: hidden;
 }
 
 /* Preloader copre tutto */
@@ -35,7 +31,7 @@ body.loading {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(244, 244, 244); /* Cambia colore se vuoi */
+  background: var(--primary-color); /* Cambia colore se vuoi */
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -89,17 +85,6 @@ body.loading {
       padding-bottom: 1vw
     }
 
-    .contentps {
-      color: var(--quadrary-color);
-      white-space: pre-line;
-      font-weight: 700;
-      font-kerning: auto; 
-      margin-bottom: 0.5em;
-      margin-left: 4vw;
-      margin-right: 4vw;
-      font-size: 3.8vw;
-      line-height: 4.5vw;
-    }
     &.active {
       .icon {
         transform: rotate(45deg);
@@ -107,13 +92,11 @@ body.loading {
     }
 
     .content {
-      color: var(--quadrary-color);
+      color: var(--secondary-color);
       white-space: pre-line;
       font-weight: 700;
       font-kerning: auto; 
       margin-bottom: 0.5em;
-      margin-left: 4vw;
-      margin-right: 20vw;
       font-size: 3.7vw;
       line-height: 4.5vw;
     }
@@ -166,4 +149,53 @@ color: var(--tertiary-color);
   font-weight: 700;
   font-size: 1.8vw;
   line-height: 1.2em;
+}
+
+.capiamo {
+  border: 2px solid var(--tertiary-color);
+  height: fit-content;
+}
+
+.capiamo2 {
+  border: 2px solid var(--tertiary-color);
+  height: auto;
+}
+
+/* Contenitore Masonry */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Elemento che definisce la larghezza delle colonne */
+.grid-sizer {
+  width: 33%; /* 4 colonne */
+}
+
+/* Ogni item usa la larghezza del grid-sizer */
+.grid-item {
+  width: 33%;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+/* Le immagini si adattano al contenitore */
+.grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.grid-item--66wide {
+  width: 66%;
+}
+
+#item-hover:hover{
+  transition: all 200ms ease-in-out;
+  color: var(--tertiary-color);
+}
+
+#menu-toggle:hover {
+  transition: 200ms ease-in-out;
 }
