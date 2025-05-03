@@ -15,7 +15,7 @@ body {
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
-  background-image: url(assets/about/bg.jpg);
+  background-image: url('assets/about/bg.jpg');
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
