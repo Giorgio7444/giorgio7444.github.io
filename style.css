@@ -24,7 +24,6 @@ body {
   margin: 0;
 }
 
-/* Preloader copre tutto */
 #preloader {
   position: fixed;
   top: 0;
@@ -41,7 +40,6 @@ body {
   pointer-events: all;
 }
 
-/* Loader: cerchio che gira */
 .loader {
   width: 100px;
   height: auto;
@@ -56,7 +54,6 @@ body {
   }
 }
 
-/* Classe per farlo scomparire */
 #preloader.fade-out {
   opacity: 0;
   pointer-events: none;
@@ -95,10 +92,11 @@ body {
       color: var(--secondary-color);
       white-space: pre-line;
       font-weight: 700;
-      font-kerning: auto; 
-      margin-bottom: 0.5em;
-      font-size: 3.7vw;
-      line-height: 4.5vw;
+      font-kerning: auto;
+      margin-left: 4vw;
+      margin-right: 8vw;
+      font-size: 2em;
+      line-height: 1.2em;
     }
     &.active {
       .icon {
@@ -107,7 +105,6 @@ body {
     }
   }
 }
-
 
 #menu {
   position: absolute;
@@ -161,18 +158,15 @@ color: var(--tertiary-color);
   height: auto;
 }
 
-/* Contenitore Masonry */
 .grid {
   display: flex;
   flex-wrap: wrap;
 }
 
-/* Elemento che definisce la larghezza delle colonne */
 .grid-sizer {
   width: 33%; /* 4 colonne */
 }
 
-/* Ogni item usa la larghezza del grid-sizer */
 .grid-item {
   width: 33%;
   padding-left: 1rem;
@@ -180,7 +174,6 @@ color: var(--tertiary-color);
   box-sizing: border-box;
 }
 
-/* Le immagini si adattano al contenitore */
 .grid-item img {
   display: block;
   width: 100%;
@@ -197,5 +190,5 @@ color: var(--tertiary-color);
 }
 
 #menu-toggle:hover {
-  transition: 200ms ease-in-out;
+  transition: 200ms;
 }
