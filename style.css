@@ -10,12 +10,11 @@
 body {
   font-family: var(--font-family);
   color: var(--secondary-color);
-  background-color: var(--primary-color);
   max-width: 100%;
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
-  background-image: url('assets/About/bg.jpg');
+  background-image: url('assets/About/bg-black.jpg');
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
