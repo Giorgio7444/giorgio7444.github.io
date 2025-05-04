@@ -50,27 +50,41 @@ const setupMenu = () => {
   const menuToggle = document.querySelector("#menu-toggle");
   const menuItems = document.querySelectorAll("#menu .item");
   const changeText = document.querySelector("#menu-toggle");
+  const backgroundLayer = document.querySelector("#background-layer");
+
   gsap.set(menuToggle, { y: window.innerHeight - 200 });
+
   const speed = 0.5;
   const tl = gsap.timeline({ paused: true });
+
   tl.to("#site-title", speed, { y: "-=200%", ease: "power1.inOut" });
-  tl.to("#menu-toggle", speed, { y: "-7vh", ease: "power1.inOut"}, `-=${speed / 3}`);
-  tl.to(
-    menuItems,
-    {
-      y: "-80vh",
-      stagger: 0.1,
-    },
-    `-=${speed / 2}`
-  );
+  tl.to("#menu-toggle", speed, { y: "-13vh", ease: "power1.inOut" }, `-=${speed / 3}`);
+  tl.to(menuItems, { y: "-90vh", stagger: 0.1 }, `-=${speed / 2}`);
+
+  // Funzione per gestire la visibilità del background
+  const toggleBackground = (hide) => {
+    if (!backgroundLayer) return;
+
+    if (hide) {
+      backgroundLayer.style.opacity = "0"; // Nascondi background
+    } else {
+      setTimeout(() => {
+        backgroundLayer.style.opacity = "1"; // Rendi visibile dopo 300ms
+      }, 300);
+    }
+  };
 
   menuToggle.addEventListener("click", () => {
     if (tl.isActive()) return;
-    
-    if (menuToggle.classList.contains("active")) {
+
+    const isActive = menuToggle.classList.contains("active");
+
+    if (isActive) {
       tl.reverse();
+      toggleBackground(false); // Mostra il background
     } else {
       tl.play();
+      toggleBackground(true); // Nascondi il background
     }
 
     menuToggle.classList.toggle("active");
@@ -79,15 +93,11 @@ const setupMenu = () => {
 
   changeText.addEventListener("click", () => {
     setTimeout(() => {
-      if (menuToggle.classList.contains("active")) {
-        changeText.textContent = "GO BACK!";
-      } else {
-        changeText.textContent = "LET'S GO!";
-      }
+      changeText.textContent = menuToggle.classList.contains("active") ? "GO BACK!" : "LET'S GO!";
     }, 800);
   });
-
 };
+
 
 const menuToggle = document.querySelector("#menu-toggle");
 
