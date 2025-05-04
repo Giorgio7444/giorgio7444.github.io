@@ -2,7 +2,7 @@
   --primary-color: #131313;
   --secondary-color: #f3f3f3;
   --tertiary-color: #f0bd07; 
-  --quadrary-color: #b5b5b5;
+  --quadrary-color: #9b9b9b;
   --font-family: 'itc-avant-garde-gothic-pro';
   --font-big: 12.5vw;
 }
@@ -26,6 +26,7 @@ body {
   background-repeat: no-repeat;
   transition: opacity 0.3s ease;
   opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 #preloader {
@@ -80,10 +81,12 @@ body {
 
     button {
       font-size: var(--font-big);
+      color: var(--quadrary-color); 
       font-weight: 900;
       line-height: 8vw;
       padding-top: 3.3vw;
-      padding-bottom: 1vw
+      padding-bottom: 1vw;
+      text-transform: uppercase;
     }
 
     &.active {
@@ -92,8 +95,19 @@ body {
       }
     }
 
-    .content {
+    .contentps {
       color: var(--secondary-color);
+      white-space: pre-line;
+      font-weight: 700;
+      font-kerning: auto;
+      margin-left: 1vw;
+      margin-right: 1vw;
+      font-size: 2em;
+      line-height: 1.2em;
+    }
+
+    .content {
+      color: var(--quadrary-color);
       white-space: pre-line;
       font-weight: 700;
       font-kerning: auto;
@@ -106,6 +120,7 @@ body {
       .icon {
         transform: rotate(45deg);
       }
+
     }
   }
 }
@@ -137,8 +152,12 @@ body {
 }
 
 .highlight {
-color: var(--tertiary-color);
+color: var(--secondary-color);
 }
+
+.highlighty {
+  color: var(--tertiary-color);
+  }
 
 .cit {
   text-align: center;
@@ -189,7 +208,6 @@ color: var(--tertiary-color);
 }
 
 #item-hover:hover{
+  color: var(--secondary-color); 
   transition: all 200ms ease-in;
-  color: var(--primary-color);
-  -webkit-text-stroke: 0.2vw var(--tertiary-color);
 }

@@ -70,7 +70,7 @@ const setupMenu = () => {
     } else {
       setTimeout(() => {
         backgroundLayer.style.opacity = "1"; // Rendi visibile dopo 300ms
-      }, 300);
+      }, 600);
     }
   };
 
@@ -110,11 +110,11 @@ const overflowHidden = () => {
 };
 
 menuToggle.addEventListener("mouseenter", () => {
-  menuToggle.classList.add("highlight");
+  menuToggle.classList.add("highlighty");
 });
 
 menuToggle.addEventListener("mouseleave", () => {
-  menuToggle.classList.remove("highlight"); // Torna al colore originale quando il mouse esce
+  menuToggle.classList.remove("highlighty"); // Torna al colore originale quando il mouse esce
 });
 
 document.addEventListener("DOMContentLoaded", () => {
