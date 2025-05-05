@@ -82,7 +82,7 @@ body {
     button {
       font-size: var(--font-big);
       color: var(--quadrary-color); 
-      font-weight: 900;
+      font-weight: 700;
       line-height: 8vw;
       padding-top: 3.3vw;
       padding-bottom: 1vw;
@@ -95,10 +95,22 @@ body {
       }
     }
 
+    .visuals {
+      justify-content: center;
+    }
+
+    .content-text {
+      max-width: 1120px;
+      font-size: 1.3em;
+      line-height: 1.2em;
+      font-weight: 500;
+      font-kerning: auto;
+        }
+
     .contentps {
       color: var(--secondary-color);
       white-space: pre-line;
-      font-weight: 700;
+      font-weight: 500;
       font-kerning: auto;
       margin-left: 1vw;
       margin-right: 1vw;
@@ -109,12 +121,8 @@ body {
     .content {
       color: var(--quadrary-color);
       white-space: pre-line;
-      font-weight: 700;
-      font-kerning: auto;
       margin-left: 2vw;
-      margin-right: 8vw;
-      font-size: 2em;
-      line-height: 1.2em;
+      margin-right: 2vw;
     }
     &.active {
       .icon {
@@ -181,30 +189,59 @@ color: var(--secondary-color);
   height: auto;
 }
 
-.grid {
+.grid-poster {
   display: flex;
   flex-wrap: wrap;
 }
 
-.grid-sizer {
+.grid-sizer-poster {
   width: 33%; /* 4 colonne */
 }
 
-.grid-item {
+.grid-item-poster {
   width: 33%;
-  padding-left: 1.05vw;
+  padding-right: 1.05vw;
   margin-bottom: 1vw;
   box-sizing: border-box;
 }
 
-.grid-item img {
+.grid-item-poster img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.grid-item--66wide {
+.grid-item-poster--66wide {
   width: 66%;
+}
+
+.grid-pasta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1vw; /* per compensare il padding interno */
+}
+
+.grid-sizer-pasta {
+  width: 33%;
+  height: 0;
+  visibility: hidden;
+}
+
+.grid-item-pasta {
+  width: 33%;
+  padding-left: 1vw;
+  margin-bottom: 1vw;
+  box-sizing: border-box;
+}
+
+.grid-item-pasta img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.grid-item-pasta--100wide {
+  width: 100%;
 }
 
 #item-hover:hover{
