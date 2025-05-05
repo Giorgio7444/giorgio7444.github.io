@@ -142,12 +142,18 @@ body {
 
 #menu-toggle {
   position: absolute;
+  color: var(--quadrary-color);
   top: 18.5vh;
   justify-content: center;
   z-index: 1000;
   font-size:xx-large;
   line-height: 30%;
   font-weight: 700;
+}
+
+#menu-toggle:hover{
+color: var(--secondary-color);
+transition: all 300ms ease-in;
 }
 
 #menu-opener {

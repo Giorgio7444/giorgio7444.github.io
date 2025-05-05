@@ -6,7 +6,6 @@
   <title>VEESWAL</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/set5wnr.css">
-  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" >
   <link href="style.css" rel="stylesheet">
   <link rel="icon" type="icon" href="assets/logon.ico">
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
@@ -16,7 +15,7 @@
 
   <div id="background-layer"></div>
 
-  <!-- COOKIE BANNER START -->
+
 <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #fff; padding: 15px; font-family: Arial, sans-serif; display: none; z-index: 9999; font-size: 14px;">
   <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
     <div id="cookie-banner-content" style="margin-bottom: 10px;">
@@ -29,54 +28,8 @@
   </div>
 </div>
 
-<script>
-  // Mostra il banner solo se non hai già fatto una scelta
-  if (!localStorage.getItem('cookies-choice')) {
-    document.getElementById('cookie-banner').style.display = 'block';
-  } else {
-    if (localStorage.getItem('cookies-choice') === 'accepted') {
-      initTracking();
-    }
-  }
-
-  // Clic su Accetta
-  document.getElementById('accept-cookies').addEventListener('click', function() {
-    localStorage.setItem('cookies-choice', 'accepted');
-    document.getElementById('cookie-banner').style.display = 'none';
-    initTracking();
-  });
-
-  // Clic su Rifiuta
-  document.getElementById('reject-cookies').addEventListener('click', function() {
-    localStorage.setItem('cookies-choice', 'rejected');
-    document.getElementById('cookie-banner').style.display = 'none';
-    // Non carichiamo nessun tracciamento se l'utente rifiuta
-  });
-
-  // Funzione per inizializzare GTM e Meta Pixel
-  function initTracking() {
-    // === Google Tag Manager ===
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      "https://www.googletagmanager.com/gtag/js?id=G-T1CNL89KW0"+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','G-T1CNL89KW0'); // <-- metti il tuo ID GTM qui
-
-    // === Meta Pixel ===
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)
-    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    
-    fbq('init', '1182818315227614'); // <-- metti il tuo ID Pixel qui
-    fbq('track', 'PageView');
-  }
-</script>
-<!-- COOKIE BANNER END -->
+  
+  
 
   <div id="preloader">
     <div class="loader">
@@ -262,7 +215,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="scripts.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1CNL89KW0"></script>
   <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   
