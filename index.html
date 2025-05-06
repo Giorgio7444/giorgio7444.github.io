@@ -4,6 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VEESWAL</title>
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="assets/About/silktide-consent-manager.css">
+<script src="assets/About/silktide-consent-manager.js"></script>
+<script>
+silktideCookieBannerManager.updateCookieBannerConfig({
+  background: {
+    showBackground: true
+  },
+  cookieIcon: {
+    position: "bottomRight"
+  },
+  cookieTypes: [
+  {
+    id: "necessary",
+    name: "Necessary",
+    description: "<p>...</p>",
+    required: true,
+    onAccept: function() {
+      console.log('Necessari accettati');
+    }
+  },
+  {
+    id: "analytical",
+    name: "Analytical",
+    description: "<p>...</p>",
+    required: false, // consentibile
+    onAccept: function() {
+      console.log('Analitici accettati');
+      
+      // Google Analytics 4
+      const gaScript = document.createElement('script');
+      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-T1CNL89KW0";
+      gaScript.async = true;
+      document.head.appendChild(gaScript);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T1CNL89KW0'); // <-- sostituisci con il tuo ID
+    }
+  },
+  {
+    id: "advertising",
+    name: "Advertising",
+    description: "<p>...</p>",
+    required: false, // consentibile
+    onAccept: function() {
+      console.log('Advertising accettati');
+
+      // Meta Pixel (Facebook Pixel)
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '1182818315227614'); // <-- sostituisci con il tuo ID
+      fbq('track', 'PageView');
+    }
+  }
+  ],
+  text: {
+    banner: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+      acceptAllButtonText: "Accetta",
+      acceptAllButtonAccessibleLabel: "Accetta",
+      rejectNonEssentialButtonText: "Rifiuta",
+      rejectNonEssentialButtonAccessibleLabel: "Rifiuta",
+      preferencesButtonText: "Preferenze",
+      preferencesButtonAccessibleLabel: "Preferenze"
+    },
+    preferences: {
+      title: "Personalizza le tue preferenze dei cookie",
+      description: "<p>Rispettiamo il tuo diritto alla privacy. Puoi scegliere di non consentire alcuni tipi di cookie. Le tue preferenze sui cookie saranno applicate a tutto il nostro sito web.</p>",
+      creditLinkText: "Ottieni questo banner gratis",
+      creditLinkAccessibleLabel: "Ottieni questo banner gratis"
+    }
+  },
+  position: {
+    banner: "bottomCenter"
+  }
+});
+</script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/set5wnr.css">
   <link href="style.css" rel="stylesheet">
@@ -12,6 +97,8 @@
 
 <body>
   <div id="background-layer"></div>
+
+
 
   <div id="preloader">
     <div class="loader">
