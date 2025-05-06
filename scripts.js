@@ -109,14 +109,6 @@ const overflowHidden = () => {
   }
 };
 
-//menuToggle.addEventListener("mouseenter", () => {
-//  menuToggle.classList.add("highlighty");
-//});
-
-//menuToggle.addEventListener("mouseleave", () => {
-//  menuToggle.classList.remove("highlighty"); // Torna al colore originale quando il mouse esce
-//});
-
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded");
   setupTitle();
