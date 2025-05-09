@@ -95,8 +95,9 @@ body {
       }
     }
 
-    .visuals {
+    .visual-element {
       justify-content: center;
+      padding-bottom: 1vw
     }
 
     .content-text {
@@ -152,7 +153,6 @@ body {
 
 #menu-toggle:hover{
 color: var(--secondary-color);
-transition: 300ms ease-in;
 }
 
 #menu-opener {
@@ -235,6 +235,7 @@ color: var(--secondary-color);
 .grid-item-pasta {
   width: 33%;
   padding-left: 1vw;
+  padding-bottom: 0.9vw;
   box-sizing: border-box;
 }
 
