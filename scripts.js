@@ -5,14 +5,10 @@ const setupTitle = () => {
   setInterval(() => {
     letter.textContent = letters[counter];
     counter++;
-
     if (counter >= letters.length) counter = 0;
   }, 600);
 };
 
-let buttons = [];
-let contents = [];
-let currentButton = null;
 const setupAccordion = () => {
   const accordion = document.querySelector(".accordion");
   const buttons = accordion.querySelectorAll("button");
@@ -58,18 +54,16 @@ const setupMenu = () => {
   const tl = gsap.timeline({ paused: true });
 
   tl.to("#site-title", speed, { y: "-=200%", ease: "power1.inOut" });
-  tl.to("#menu-toggle", speed, { y: "-13vh", ease: "power1"}, `-=${speed / 3}`);
+  tl.to("#menu-toggle", speed, { y: "-13vh", ease: "power1" }, `-=${speed / 3}`);
   tl.to(menuItems, { y: "-90vh", stagger: 0.1 }, `-=${speed / 2}`);
 
-  // Funzione per gestire la visibilità del background
   const toggleBackground = (hide) => {
     if (!backgroundLayer) return;
-
     if (hide) {
-      backgroundLayer.style.opacity = "0"; // Nascondi background
+      backgroundLayer.style.opacity = "0";
     } else {
       setTimeout(() => {
-        backgroundLayer.style.opacity = "1"; // Rendi visibile dopo 300ms
+        backgroundLayer.style.opacity = "1";
       }, 600);
     }
   };
@@ -81,14 +75,14 @@ const setupMenu = () => {
 
     if (isActive) {
       tl.reverse();
-      toggleBackground(false); // Mostra il background
+      toggleBackground(false);
     } else {
       tl.play();
-      toggleBackground(true); // Nascondi il background
+      toggleBackground(true);
     }
 
     menuToggle.classList.toggle("active");
-    overflowHidden();
+    overflowHidden(); // aggiorna scroll in base allo stato
   });
 
   changeText.addEventListener("click", () => {
@@ -98,31 +92,42 @@ const setupMenu = () => {
   });
 };
 
-
-const menuToggle = document.querySelector("#menu-toggle");
-
+// 🔧 Gestione overflow centralizzata
 const overflowHidden = () => {
+  const menuToggle = document.querySelector("#menu-toggle");
   if (menuToggle.classList.contains("active")) {
+    document.body.style.overflowY = "auto";
+    localStorage.setItem("scroll-enabled", "auto");
+  } else {
+    document.body.style.overflowY = "hidden";
+    localStorage.setItem("scroll-enabled", "hidden");
+  }
+};
+
+// 🔁 Ripristino scroll dopo refresh o banner cookie
+window.addEventListener("load", () => {
+  const savedScroll = localStorage.getItem("scroll-enabled");
+  if (savedScroll === "auto") {
     document.body.style.overflowY = "auto";
   } else {
     document.body.style.overflowY = "hidden";
   }
-};
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded");
   setupTitle();
   setupAccordion();
   setupMenu();
-
 });
 
-  const itemHover = document.getElementById("item-hover");
-
+// 🖱 Hover effect dinamico
+const itemHover = document.getElementById("item-hover");
+if (itemHover) {
   itemHover.addEventListener("mouseenter", () => {
     itemHover.classList.add("highlight");
   });
-
   itemHover.addEventListener("mouseleave", () => {
     itemHover.classList.remove("highlight");
   });
+}
