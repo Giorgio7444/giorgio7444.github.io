@@ -200,7 +200,8 @@ color: var(--secondary-color);
 }
 
 .grid-sizer-poster {
-  width: 33%; /* 4 colonne */
+  width: 33%;
+  height: auto;
 }
 
 .grid-item-poster {
