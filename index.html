@@ -205,6 +205,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
 
           <div class="visuals">
             <div class="grid-still">
+              <div class="grid-sizer-still"></div>
               <div class="grid-item-still"><img src="assets/Still Lie/Still Lie(f) - Francisco de Zurbarán.jpg" alt="Francisco de Zurbarán"></div>
               <div class="grid-item-still"><img src="assets/Still Lie/Still Lie(f) - Giorgio Morandi.jpg" alt="Giorgio Morandi"></div>
               <div class="grid-item-still"><img src="assets/Still Lie/Still Lie(f) - Francisco Goya.jpg" alt="Francisco Goya"></div>
@@ -311,6 +312,18 @@ new Masonry('.grid-poster', {
 new Masonry('.grid-pasta', {
   itemSelector: '.grid-item-pasta',
   columnWidth: '.grid-sizer-pasta',
+  percentPosition: true
+});
+
+new Masonry('.grid-olivetti', {
+  itemSelector: '.grid-item-olivetti',
+  columnWidth: '.grid-sizer-olivetti',
+  percentPosition: true
+});
+
+new Masonry('.grid-still', {
+  itemSelector: '.grid-item-still',
+  columnWidth: '.grid-sizer-still',
   percentPosition: true
 });
   </script>
