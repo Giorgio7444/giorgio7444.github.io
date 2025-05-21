@@ -257,15 +257,15 @@ color: var(--secondary-color);
 }
 
 .grid-sizer-still {
-  width: 33%;
+  width: 50%;
   height: 0;
   visibility: hidden;
 }
 
 .grid-item-still {
-  width: 33%;
+  width: 50%;
   padding-left: 1vw;
-  padding-bottom: 0.9vw;
+  padding-bottom: 1vw;
   box-sizing: border-box;
 }
 
