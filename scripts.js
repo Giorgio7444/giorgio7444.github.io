@@ -1,5 +1,6 @@
 const setupTitle = () => {
   const letter = document.querySelector("#site-title .letter");
+  if (!letter) return;
   const letters = ["benvenuta nel", "benvenute nel", "benvenuti nel", "benvenuto nel", "benvenutu nel"];
   let counter = 0;
   setInterval(() => {
