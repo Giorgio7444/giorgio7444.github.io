@@ -197,6 +197,7 @@ color: var(--secondary-color);
 .grid-poster {
   display: flex;
   flex-wrap: wrap;
+  margin-right: -1vw;
 }
 
 .grid-sizer-poster {
@@ -257,15 +258,15 @@ color: var(--secondary-color);
 }
 
 .grid-sizer-still {
-  width: 50%;
+  width: 33%;
   height: 0;
   visibility: hidden;
 }
 
 .grid-item-still {
-  width: 50%;
+  width: 33%;
   padding-left: 1vw;
-  padding-bottom: 1vw;
+  padding-bottom: 0.9vw;
   box-sizing: border-box;
 }
 
