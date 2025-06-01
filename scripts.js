@@ -1,3 +1,29 @@
+function openAccordionItem(item) {
+  const content = item.querySelector('.accordion-content, .content, .contentps');
+  if (!content) return;
+
+  content.addEventListener('transitionend', function handleTransition(e) {
+    if (e.propertyName === 'max-height') {
+      const masonryContainer = item.querySelector('.masonry-container');
+      if (masonryContainer) {
+        const masonry = Masonry.data(masonryContainer);
+        if (masonry) {
+          masonry.layout();
+        } else {
+          new Masonry(masonryContainer, {
+            itemSelector: '.masonry-item',
+            columnWidth: '.masonry-sizer',
+            percentPosition: true,
+          });
+        }
+      }
+      content.removeEventListener('transitionend', handleTransition);
+    }
+  });
+
+  content.style.maxHeight = content.scrollHeight + 'px';
+}
+
 const setupTitle = () => {
   const letter = document.querySelector("#site-title .letter");
   if (!letter) return;
@@ -13,7 +39,7 @@ const setupTitle = () => {
 const setupAccordion = () => {
   const accordion = document.querySelector(".accordion");
   const buttons = accordion.querySelectorAll("button");
-  const contents = accordion.querySelectorAll(".content, .contentps");
+  const contents = accordion.querySelectorAll(".content, .contentps, .accordion-content");
   let currentButton = null;
 
   buttons.forEach((button) => {
@@ -26,9 +52,9 @@ const setupAccordion = () => {
         return;
       }
 
-      button.parentElement.classList.add("active");
-      const content = button.parentElement.querySelector(".content, .contentps");
-      content.style.maxHeight = content.scrollHeight + "px";
+      const item = button.parentElement;
+      item.classList.add("active");
+      openAccordionItem(item);
       currentButton = button;
 
       setTimeout(() => {
@@ -38,7 +64,7 @@ const setupAccordion = () => {
           top: elementTop - extraOffset,
           behavior: "smooth",
         });
-      }, 450);      
+      }, 450);
     });
   });
 };
@@ -83,7 +109,7 @@ const setupMenu = () => {
     }
 
     menuToggle.classList.toggle("active");
-    overflowHidden(); // aggiorna scroll in base allo stato
+    overflowHidden(); 
   });
 
   changeText.addEventListener("click", () => {
@@ -93,7 +119,6 @@ const setupMenu = () => {
   });
 };
 
-// 🔧 Gestione overflow centralizzata
 const overflowHidden = () => {
   const menuToggle = document.querySelector("#menu-toggle");
   if (menuToggle.classList.contains("active")) {
@@ -105,7 +130,6 @@ const overflowHidden = () => {
   }
 };
 
-// 🔁 Ripristino scroll dopo refresh o banner cookie
 window.addEventListener("load", () => {
   const savedScroll = localStorage.getItem("scroll-enabled");
   if (savedScroll === "auto") {
@@ -116,13 +140,11 @@ window.addEventListener("load", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded");
   setupTitle();
   setupAccordion();
   setupMenu();
 });
 
-// 🖱 Hover effect dinamico
 const itemHover = document.getElementById("item-hover");
 if (itemHover) {
   itemHover.addEventListener("mouseenter", () => {
