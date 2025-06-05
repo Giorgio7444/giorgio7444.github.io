@@ -68,6 +68,7 @@ body {
   color: var(--quadrary-color);
   font-size: 11.5vw;
   line-height: 9.5vw;
+  margin-left: 0.8vw;
   font-weight: 700;
   position: fixed;
   padding-top: 1vw;
@@ -157,6 +158,7 @@ color: var(--secondary-color);
 
 #menu-opener {
   padding-bottom: 0.16em;
+  margin-left: 1vw;
   justify-content: left;
   align-items: left;
   font-size: 14vw;
