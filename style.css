@@ -10,7 +10,8 @@
 body {
   font-family: var(--font-family);
   color: var(--secondary-color);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   background-color: var(--primary-color);
 }
 
@@ -143,6 +144,7 @@ body {
   position: absolute;
   color: var(--quadrary-color);
   top: 18svh;
+  margin-left: 2vw;
   z-index: 1000;
   font-size:calc(22px + 1.2vw);
   line-height: 30%;
