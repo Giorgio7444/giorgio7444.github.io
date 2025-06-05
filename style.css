@@ -144,7 +144,6 @@ body {
   position: absolute;
   color: var(--quadrary-color);
   top: 18.5vh;
-  justify-content: center;
   z-index: 1000;
   font-size:xx-large;
   line-height: 30%;
@@ -157,7 +156,6 @@ color: var(--secondary-color);
 
 #menu-opener {
   padding-bottom: 0.16em;
-  padding-left: 1vw;
   justify-content: left;
   align-items: left;
   font-size: 10vw;
