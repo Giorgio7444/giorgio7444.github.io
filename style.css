@@ -10,8 +10,7 @@
 body {
   font-family: var(--font-family);
   color: var(--secondary-color);
-  overflow-x: hidden;
-  overflow-Y: hidden;
+  overflow: hidden;
   background-color: var(--primary-color);
 }
 
@@ -159,7 +158,6 @@ color: var(--secondary-color);
 
 #menu-opener {
   padding-bottom: 0.16em;
-  padding-left: 1vw;
   justify-content: left;
   align-items: left;
   font-size: 14vw;

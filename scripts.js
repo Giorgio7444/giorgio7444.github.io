@@ -44,8 +44,20 @@ const setupAccordion = () => {
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
+      document.body.style.overflowY = "auto";
       buttons.forEach((btn) => btn.parentElement.classList.remove("active"));
       contents.forEach((content) => (content.style.maxHeight = "0"));
+
+      //masonry
+      const masonrySelector = button.dataset.masonrySelector;
+      const masonryInit = button.dataset.masonryInit;
+      if (masonrySelector && !masonryInit) {
+        const masonrySettings = mansonrySettings[masonrySelector];
+        console.log('masonrySelector', masonrySelector, masonrySettings);
+        new Masonry(masonrySelector, masonrySettings);
+        button.dataset.masonryInit = true;
+      }
+
 
       if (currentButton === button) {
         currentButton = null;
