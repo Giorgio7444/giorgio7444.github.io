@@ -122,10 +122,10 @@ const setupMenu = () => {
 const overflowHidden = () => {
   const menuToggle = document.querySelector("#menu-toggle");
   if (menuToggle.classList.contains("active")) {
-    document.body.style.overflowY = "auto";
+    document.body.style.overflow= "auto";
     localStorage.setItem("scroll-enabled", "auto");
   } else {
-    document.body.style.overflowY = "hidden";
+    document.body.style.overflow = "hidden";
     localStorage.setItem("scroll-enabled", "hidden");
   }
 };

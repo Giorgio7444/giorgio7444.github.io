@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #131313;
-  --secondary-color: #f3f3f3;
-  --tertiary-color: #f0bd07; 
-  --quadrary-color: #9b9b9b;
+  --primary-color: hsl(0, 0%, 5%);
+  --secondary-color: hsl(0, 0%, 99%);
+  --tertiary-color: hsl(47, 94%, 48%); 
+  --quadrary-color: hsl(0, 0%, 70%);
   --font-family: 'itc-avant-garde-gothic-pro';
   --font-big: 12.5vw;
 }
@@ -83,7 +83,7 @@ body {
       font-size: var(--font-big);
       color: var(--quadrary-color); 
       font-weight: 700;
-      line-height: 8vw;
+      line-height: 9vw;
       padding-top: 3.3vw;
       padding-bottom: 1vw;
       text-transform: uppercase;
@@ -101,9 +101,9 @@ body {
     }
 
     .content-text {
-      max-width: 1120px;
-      font-size: 1.3em;
-      line-height: 1.2em;
+      max-width: 75vw;
+      font-size:calc(14px + 1.5vw);
+      line-height: calc(20px + 1.5vw);
       font-weight: 500;
       font-kerning: auto;
         }
@@ -143,12 +143,14 @@ body {
 #menu-toggle {
   position: absolute;
   color: var(--quadrary-color);
-  top: 18.5vh;
   justify-content: center;
+  top: 18.5svh;
+  left: 1svw;
+  padding: 0.5em 1em;
   z-index: 1000;
-  font-size:xx-large;
+  font-size:calc(18px + 1.2vw);
   line-height: 30%;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 #menu-toggle:hover{
@@ -160,7 +162,7 @@ color: var(--secondary-color);
   padding-left: 1vw;
   justify-content: left;
   align-items: left;
-  font-size: 10vw;
+  font-size: 14vw;
   font-weight: 700;
 }
 
