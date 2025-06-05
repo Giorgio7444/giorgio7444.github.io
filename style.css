@@ -142,14 +142,11 @@ body {
 #menu-toggle {
   position: absolute;
   color: var(--quadrary-color);
-  justify-content: center;
-  top: 18.5svh;
-  left: 1svw;
-  padding: 0.5em 1em;
+  top: 18svh;
   z-index: 1000;
-  font-size:calc(18px + 1.2vw);
+  font-size:calc(22px + 1.2vw);
   line-height: 30%;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 #menu-toggle:hover{
