@@ -164,7 +164,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
       </div>
 
       <div class="item">
-        <button class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
+        <button data-masonry-selector=".grid-olivetti" data-masonry-init="true" class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
           <div id="item-hover">Olivetti Red</div>
         </button>
       
@@ -190,7 +190,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
       </div>
         
       <div class="item">
-        <button class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
+        <button data-masonry-selector=".grid-still" class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
           <div id="item-hover">STILL LIE</div>
         </button>
       
@@ -219,7 +219,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
       </div>
 
       <div class="item">
-        <button class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
+        <button data-masonry-selector=".grid-pasta" class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
           <div id="item-hover">Spaghetti</div>
         </button>
       
@@ -241,7 +241,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
       </div>
       
       <div class="item">
-        <button class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
+        <button data-masonry-selector=".grid-poster" class="w-full flex justify-center items-center text-slate-800" id="menu-opener">
           <div id="item-hover">Posters</div>
         </button>
 
@@ -286,33 +286,34 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-  <script src="scripts.js"></script>
   <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="scripts.js"></script>
   <script>
-  new Masonry('.grid-poster', {
-    itemSelector: '.grid-item-poster',
-    columnWidth: '.grid-sizer-poster',
-    percentPosition: true
-  });
 
-  new Masonry('.grid-pasta', {
-    itemSelector: '.grid-item-pasta',
-    columnWidth: '.grid-sizer-pasta',
-    percentPosition: true
-  });
+  const mansonrySettings = {
+    '.grid-poster': {
+      'itemSelector': '.grid-item-poster',
+      'columnWidth': '.grid-sizer-poster',
+      'percentPosition': true
+    },
+    '.grid-pasta': {  
+      'itemSelector': '.grid-item-pasta',
+      'columnWidth': '.grid-sizer-pasta',
+      'percentPosition': true
+    },
+    '.grid-olivetti': {
+      'itemSelector': '.grid-item-olivetti', 
+      'columnWidth': '.grid-sizer-olivetti',
+      'percentPosition': true
+    },
+    '.grid-still': {
+      'itemSelector': '.grid-item-still',
+      'columnWidth': '.grid-sizer-still',
+      'percentPosition': true
+    }
+  };
 
-  new Masonry('.grid-olivetti', {
-    itemSelector: '.grid-item-olivetti',
-    columnWidth: '.grid-sizer-olivetti',
-    percentPosition: true
-  });
-
-  new Masonry('.grid-still', {
-    itemSelector: '.grid-item-still',
-    columnWidth: '.grid-sizer-still',
-    percentPosition: true
-  });
     </script>
   <script>
 
