@@ -144,7 +144,7 @@ body {
   position: absolute;
   color: var(--quadrary-color);
   top: 18svh;
-  margin-left: 2vw;
+  margin-left: 1vw;
   z-index: 1000;
   font-size:calc(22px + 1.2vw);
   line-height: 30%;
