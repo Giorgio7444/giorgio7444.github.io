@@ -145,9 +145,9 @@ const overflowHidden = () => {
 window.addEventListener("load", () => {
   const savedScroll = localStorage.getItem("scroll-enabled");
   if (savedScroll === "auto") {
-    document.body.style.overflowY = "auto";
-  } else {
     document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "auto";
   }
 });
 
