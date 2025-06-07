@@ -15,6 +15,10 @@ body {
   background-color: var(--primary-color);
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 #background-layer {
   position: fixed;
   width: 100vw;

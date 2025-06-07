@@ -5,7 +5,6 @@ document.getElementById('menu-toggle').addEventListener('click', function (e) {
   document.body.classList.remove('no-scroll');
 });
 
-
 function openAccordionItem(item) {
   const content = item.querySelector('.accordion-content, .content, .contentps');
   if (!content) return;
@@ -56,7 +55,7 @@ const setupAccordion = () => {
       buttons.forEach((btn) => btn.parentElement.classList.remove("active"));
       contents.forEach((content) => (content.style.maxHeight = "0"));
 
-      //masonry
+      // masonry
       const masonrySelector = button.dataset.masonrySelector;
       const masonryInit = button.dataset.masonryInit;
       if (masonrySelector && !masonryInit) {
@@ -65,7 +64,6 @@ const setupAccordion = () => {
         new Masonry(masonrySelector, masonrySettings);
         button.dataset.masonryInit = true;
       }
-
 
       if (currentButton === button) {
         currentButton = null;
@@ -100,6 +98,15 @@ const setupMenu = () => {
   const speed = 0.5;
   const tl = gsap.timeline({ paused: true });
 
+  // ✅ Overflow gestito correttamente tramite GSAP
+  document.body.classList.add("no-scroll");
+  tl.eventCallback("onStart", () => {
+    document.body.classList.remove("no-scroll");
+  });
+  tl.eventCallback("onReverseComplete", () => {
+    document.body.classList.add("no-scroll");
+  });
+
   tl.to("#site-title", speed, { opacity: "0", ease: "power1.inOut" });
   tl.to("#menu-toggle", speed, { y: "-13vh", ease: "power1" }, `-=${speed / 3}`);
   tl.to(menuItems, { y: "-90vh", stagger: 0.1 }, `-=${speed / 2}`);
@@ -129,7 +136,7 @@ const setupMenu = () => {
     }
 
     menuToggle.classList.toggle("active");
-    overflowHidden(); 
+    overflowHidden();
   });
 
   changeText.addEventListener("click", () => {
@@ -142,7 +149,7 @@ const setupMenu = () => {
 const overflowHidden = () => {
   const menuToggle = document.querySelector("#menu-toggle");
   if (menuToggle.classList.contains("active")) {
-    document.body.style.overflow= "auto";
+    document.body.style.overflow = "auto";
     localStorage.setItem("scroll-enabled", "auto");
   } else {
     document.body.style.overflow = "hidden";
