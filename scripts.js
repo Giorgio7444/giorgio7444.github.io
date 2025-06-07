@@ -7,10 +7,15 @@ if (!localStorage.getItem("scroll-enabled")) {
 
 window.addEventListener("load", () => {
   const savedScroll = localStorage.getItem("scroll-enabled");
+  
+  // Abilita scroll solo se esplicitamente salvato come "auto"
   if (savedScroll === "auto") {
     document.body.style.overflowY = "auto";
+    document.body.classList.remove("no-scroll");
   } else {
-    document.body.style.overflowY = "hidden";
+    // Per nuovi utenti o stato "hidden", blocca lo scroll
+    document.body.style.overflowY = "hidden";  
+    document.body.classList.add("no-scroll");
   }
 });
 
