@@ -1,3 +1,11 @@
+document.body.classList.add('no-scroll');
+
+document.getElementById('menu-toggle').addEventListener('click', function (e) {
+  e.preventDefault(); // Previene eventuali effetti default
+  document.body.classList.remove('no-scroll');
+});
+
+
 function openAccordionItem(item) {
   const content = item.querySelector('.accordion-content, .content, .contentps');
   if (!content) return;
