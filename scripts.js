@@ -1,3 +1,20 @@
+// Blocco scroll iniziale per nuovi utenti
+if (!localStorage.getItem("scroll-enabled")) {
+  document.body.classList.add("no-scroll");
+  document.body.style.overflowY = "hidden";
+  localStorage.setItem("scroll-enabled", "hidden");
+}
+
+window.addEventListener("load", () => {
+  const savedScroll = localStorage.getItem("scroll-enabled");
+  if (savedScroll === "auto") {
+    document.body.style.overflowY = "auto";
+  } else {
+    document.body.style.overflowY = "hidden";
+  }
+});
+
+
 document.body.classList.add('no-scroll');
 
 document.getElementById('menu-toggle').addEventListener('click', function (e) {
@@ -156,15 +173,6 @@ const overflowHidden = () => {
     localStorage.setItem("scroll-enabled", "hidden");
   }
 };
-
-window.addEventListener("load", () => {
-  const savedScroll = localStorage.getItem("scroll-enabled");
-  if (savedScroll === "auto") {
-    document.body.style.overflowY = "hidden";
-  } else {
-    document.body.style.overflowY = "auto";
-  }
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   setupTitle();
