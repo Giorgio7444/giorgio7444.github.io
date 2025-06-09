@@ -1,31 +1,47 @@
-// Blocco scroll iniziale per nuovi utenti
-if (!localStorage.getItem("scroll-enabled")) {
-  document.body.classList.add("no-scroll");
-  document.body.style.overflowY = "hidden";
-  localStorage.setItem("scroll-enabled", "hidden");
+
+function isLocalStorageAvailable() {
+  try {
+    const test = 'test';
+    localStorage.setItem(test, test);
+    localStorage.removeItem(test);
+    return true;
+  } catch(e) {
+    return false;
+  }
 }
 
-window.addEventListener("load", () => {
-  const savedScroll = localStorage.getItem("scroll-enabled");
+
+function getScrollState() {
+  if (isLocalStorageAvailable()) {
+    return localStorage.getItem("scroll-enabled");
+  }
+  return null;
+}
+
+
+function setScrollState(state) {
+  if (isLocalStorageAvailable()) {
+    localStorage.setItem("scroll-enabled", state);
+  }
+}
+
+function initializeScroll() {
+  const savedScroll = getScrollState();
   
-  // Abilita scroll solo se esplicitamente salvato come "auto"
-  if (savedScroll === "auto") {
+  if (!savedScroll) {
+    document.body.classList.add("no-scroll");
+    document.body.style.overflowY = "hidden";
+    setScrollState("hidden");
+  } else if (savedScroll === "auto") {
+    // Se esplicitamente abilitato, abilita scroll
     document.body.style.overflowY = "auto";
     document.body.classList.remove("no-scroll");
   } else {
-    // Per nuovi utenti o stato "hidden", blocca lo scroll
-    document.body.style.overflowY = "hidden";  
+    // Default: blocca scroll
     document.body.classList.add("no-scroll");
+    document.body.style.overflowY = "hidden";
   }
-});
-
-
-document.body.classList.add('no-scroll');
-
-document.getElementById('menu-toggle').addEventListener('click', function (e) {
-  e.preventDefault(); // Previene eventuali effetti default
-  document.body.classList.remove('no-scroll');
-});
+}
 
 function openAccordionItem(item) {
   const content = item.querySelector('.accordion-content, .content, .contentps');
@@ -74,10 +90,13 @@ const setupAccordion = () => {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       document.body.style.overflowY = "auto";
+      document.body.classList.remove("no-scroll");
+      setScrollState("auto");
+      
       buttons.forEach((btn) => btn.parentElement.classList.remove("active"));
       contents.forEach((content) => (content.style.maxHeight = "0"));
 
-      // masonry
+    
       const masonrySelector = button.dataset.masonrySelector;
       const masonryInit = button.dataset.masonryInit;
       if (masonrySelector && !masonryInit) {
@@ -120,15 +139,6 @@ const setupMenu = () => {
   const speed = 0.5;
   const tl = gsap.timeline({ paused: true });
 
-  // ✅ Overflow gestito correttamente tramite GSAP
-  document.body.classList.add("no-scroll");
-  tl.eventCallback("onStart", () => {
-    document.body.classList.remove("no-scroll");
-  });
-  tl.eventCallback("onReverseComplete", () => {
-    document.body.classList.add("no-scroll");
-  });
-
   tl.to("#site-title", speed, { opacity: "0", ease: "power1.inOut" });
   tl.to("#menu-toggle", speed, { y: "-13vh", ease: "power1" }, `-=${speed / 3}`);
   tl.to(menuItems, { y: "-90vh", stagger: 0.1 }, `-=${speed / 2}`);
@@ -144,7 +154,9 @@ const setupMenu = () => {
     }
   };
 
-  menuToggle.addEventListener("click", () => {
+  menuToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    
     if (tl.isActive()) return;
 
     const isActive = menuToggle.classList.contains("active");
@@ -152,13 +164,18 @@ const setupMenu = () => {
     if (isActive) {
       tl.reverse();
       toggleBackground(false);
+      document.body.classList.add("no-scroll");
+      document.body.style.overflowY = "hidden";
+      setScrollState("hidden");
     } else {
       tl.play();
       toggleBackground(true);
+      document.body.classList.remove("no-scroll");
+      document.body.style.overflowY = "auto";
+      setScrollState("auto");
     }
 
     menuToggle.classList.toggle("active");
-    overflowHidden();
   });
 
   changeText.addEventListener("click", () => {
@@ -168,21 +185,20 @@ const setupMenu = () => {
   });
 };
 
-const overflowHidden = () => {
-  const menuToggle = document.querySelector("#menu-toggle");
-  if (menuToggle.classList.contains("active")) {
-    document.body.style.overflow = "auto";
-    localStorage.setItem("scroll-enabled", "auto");
-  } else {
-    document.body.style.overflow = "hidden";
-    localStorage.setItem("scroll-enabled", "hidden");
-  }
-};
-
 document.addEventListener("DOMContentLoaded", () => {
+  initializeScroll();
+  
   setupTitle();
   setupAccordion();
   setupMenu();
+});
+
+window.addEventListener("load", () => {
+  const currentScroll = getScrollState();
+  if (currentScroll === "auto") {
+    document.body.style.overflowY = "auto";
+    document.body.classList.remove("no-scroll");
+  }
 });
 
 const itemHover = document.getElementById("item-hover");
