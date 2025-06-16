@@ -62,61 +62,72 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     position: "bottomRight"
   },
   cookieTypes: [
-  {
-    id: "necessary",
-    name: "Necessary",
-    description: "<p>...</p>",
-    required: true,
-    onAccept: function() {
-      console.log('Necessari accettati');
+    {
+      id: "necessary",
+      name: "Necessary",
+      description: "<p>...</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Necessari accettati');
+      }
+    },
+    {
+      id: "analytical",
+      name: "Analytical",
+      description: "<p>...</p>",
+      required: false,
+      onAccept: function() {
+        console.log('Analitici accettati');
+
+        // Google Analytics 4
+        const gaScript = document.createElement('script');
+        gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-T1CNL89KW0";
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-T1CNL89KW0');
+      }
+    },
+    {
+      id: "advertising",
+      name: "Advertising",
+      description: "<p>...</p>",
+      required: false,
+      onAccept: function() {
+        console.log('Advertising accettati');
+
+        // Google Ads
+        const adsScript = document.createElement('script');
+        adsScript.src = "https://www.googletagmanager.com/gtag/js?id=AW-17212042124";
+        adsScript.async = true;
+        document.head.appendChild(adsScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17212042124');
+
+        // Evita doppia inizializzazione Facebook Pixel
+        if (window.fbqInitialized) return;
+        window.fbqInitialized = true;
+
+        // Meta Pixel (Facebook Pixel)
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '1182818315227614');
+        fbq('track', 'PageView');
+      }
     }
-  },
-  {
-    id: "analytical",
-    name: "Analytical",
-    description: "<p>...</p>",
-    required: false, // consentibile
-    onAccept: function() {
-      console.log('Analitici accettati');
-      
-      // Google Analytics 4
-      const gaScript = document.createElement('script');
-      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-T1CNL89KW0";
-      gaScript.async = true;
-      document.head.appendChild(gaScript);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T1CNL89KW0'); // <-- sostituisci con il tuo ID
-    }
-  },
-  {
-    id: "advertising",
-    name: "Advertising",
-    description: "<p>...</p>",
-    required: false, // consentibile
-    onAccept: function() {
-  console.log('Advertising accettati');
-
-  // Evita doppia inizializzazione
-  if (window.fbqInitialized) return;
-  window.fbqInitialized = true;
-
-  // Meta Pixel (Facebook Pixel)
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-
-  fbq('init', '1182818315227614');
-  fbq('track', 'PageView');
-    }
-  }
   ],
   text: {
     banner: {
