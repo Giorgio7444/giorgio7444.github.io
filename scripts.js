@@ -141,7 +141,7 @@ const setupMenu = () => {
 
   tl.to("#site-title", speed, { opacity: "0", ease: "power1.inOut" });
   tl.to("#menu-toggle", speed, { y: "-13vh", ease: "power1" }, `-=${speed / 3}`);
-  tl.to(menuItems, { y: "-90vh", stagger: 0.1 }, `-=${speed / 2}`);
+  tl.to(menuItems, { opacity: 1, y: "-95vh", stagger: 0.1 }, `-=${speed / 2}`);
 
   const toggleBackground = (hide) => {
     if (!backgroundLayer) return;

@@ -83,6 +83,7 @@ body {
     line-height: 6em;
     border-bottom-width: 0vw;
     border-bottom-color: var(--secondary-color);
+    opacity: 0;
 
     button {
       font-size: var(--font-big);
@@ -140,13 +141,13 @@ body {
 
 #menu {
   position: absolute;
-  top: 100vh;
+  top: 110vh;
   width: 100vw;
   font-weight: 900;  
 }
 
 #menu-toggle {
-  position: absolute;
+  position: fixed;
   color: var(--quadrary-color);
   top: 18svh;
   margin-left: 1vw;
