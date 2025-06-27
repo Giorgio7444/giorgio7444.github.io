@@ -89,12 +89,6 @@ silktideCookieBannerManager.updateCookieBannerConfig({
                 gaScript.async = true;
                 document.head.appendChild(gaScript);
                 
-                // Google Ads
-                const gadsScript = document.createElement('script');
-                gadsScript.src = "https://www.googletagmanager.com/gtag/js?id=AW-17213179288";
-                gadsScript.async = true;
-                document.head.appendChild(gadsScript);
-                
                 // Inizializza dataLayer e gtag se non esistono già
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}

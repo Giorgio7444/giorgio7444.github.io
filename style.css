@@ -1,8 +1,8 @@
 :root {
-  --primary-color: hsl(0, 0%, 5%);
-  --secondary-color: hsl(0, 0%, 99%);
-  --tertiary-color: hsl(47, 94%, 48%); 
-  --quadrary-color: hsl(0, 0%, 70%);
+  --primary-color: #0d0d0d;
+  --secondary-color: #fcfcfc;
+  --tertiary-color: #edbc07; 
+  --quadrary-color: #b3b3b3;
   --font-family: 'itc-avant-garde-gothic-pro';
   --font-big: 12.5vw;
 }
